@@ -20,6 +20,6 @@ class RoutineTaskAdapter(private val routineTaskItems: List<RoutineTaskItem>) :
 
     override fun onBindViewHolder(holder: RoutineTaskViewHolder, position: Int) {
         val routineTaskItem: RoutineTaskItem = routineTaskItems[position]
-        holder.button.text = routineTaskItem.task + position.toString()
+        holder.button.text = routineTaskItem.task
     }
 }
