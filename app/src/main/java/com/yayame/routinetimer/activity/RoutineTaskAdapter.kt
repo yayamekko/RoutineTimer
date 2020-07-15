@@ -1,6 +1,7 @@
 package com.yayame.routinetimer.activity
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yayame.routinetimer.R
@@ -21,5 +22,10 @@ class RoutineTaskAdapter(private val routineTaskItems: List<RoutineTaskItem>) :
     override fun onBindViewHolder(holder: RoutineTaskViewHolder, position: Int) {
         val routineTaskItem: RoutineTaskItem = routineTaskItems[position]
         holder.button.text = routineTaskItem.task
+        if (position + 1 == routineTaskItems.size) {
+            holder.arrow.visibility = View.GONE
+        } else {
+            holder.arrow.visibility = View.VISIBLE
+        }
     }
 }
