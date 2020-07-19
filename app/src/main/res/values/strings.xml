@@ -2,4 +2,6 @@
     <!--activity_main-->
     <string name="app_name">Routine Timer</string>
     <string name="edit_routine">Edit Routine</string>
+    <!--edit_routine-->
+    <string name="routine_task_minute">%d分</string>
 </resources>

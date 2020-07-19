@@ -19,7 +19,7 @@ class EditRoutineActivity : AppCompatActivity() {
         val routineTaskItems = mutableListOf<RoutineTaskItem>()
         setRoutineTaskItems(routineTaskItems)
 
-        routineTaskAdapter = RoutineTaskAdapter(routineTaskItems)
+        routineTaskAdapter = RoutineTaskAdapter(this, routineTaskItems)
         routineTaskManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         routineTaskRecyclerView = findViewById(R.id.routine_task)
         routineTaskRecyclerView.layoutManager = routineTaskManager
@@ -28,7 +28,7 @@ class EditRoutineActivity : AppCompatActivity() {
 
     fun setRoutineTaskItems(routineTaskItems: MutableList<RoutineTaskItem>) {
         for (i in 0..3) {
-            val routineTaskItem = RoutineTaskItem(i, "task$i", 0, 0)
+            val routineTaskItem = RoutineTaskItem(i, "task$i", 15)
             routineTaskItems.add(routineTaskItem)
         }
     }
