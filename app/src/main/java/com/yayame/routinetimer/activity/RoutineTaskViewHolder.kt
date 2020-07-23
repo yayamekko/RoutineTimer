@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yayame.routinetimer.R
 
 class RoutineTaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    var task: TextView = itemView.findViewById(R.id.routine_task_id)
+    var task: TextView = itemView.findViewById(R.id.routine_task_name)
     var arrow: ImageView = itemView.findViewById(R.id.routine_task_arrow)
     var minute: TextView = itemView.findViewById(R.id.routine_task_minute)
 }
