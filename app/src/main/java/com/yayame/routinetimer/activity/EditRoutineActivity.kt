@@ -28,7 +28,7 @@ class EditRoutineActivity : AppCompatActivity() {
 
     fun setRoutineTaskItems(routineTaskItems: MutableList<RoutineTaskItem>) {
         for (i in 0..3) {
-            val routineTaskItem = RoutineTaskItem(i, "task$i", 15)
+            val routineTaskItem = RoutineTaskItem(i, "task$i", 10)
             routineTaskItems.add(routineTaskItem)
         }
     }
