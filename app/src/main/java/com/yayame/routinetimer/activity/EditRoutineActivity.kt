@@ -1,6 +1,7 @@
 package com.yayame.routinetimer.activity
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,9 +13,15 @@ class EditRoutineActivity : AppCompatActivity() {
     private lateinit var routineTaskAdapter: RecyclerView.Adapter<RoutineTaskViewHolder>
     private lateinit var routineTaskManager: RecyclerView.LayoutManager
 
+    private val taskTitleTextView by lazy {
+        findViewById<TextView>(R.id.routine_task_edit_title)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_routine)
+
+        taskTitleTextView.text = "平日朝の支度"
 
         val routineTaskItems = mutableListOf<RoutineTaskItem>()
         setRoutineTaskItems(routineTaskItems)
@@ -32,6 +39,4 @@ class EditRoutineActivity : AppCompatActivity() {
             routineTaskItems.add(routineTaskItem)
         }
     }
-
-
 }
