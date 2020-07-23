@@ -7,6 +7,16 @@
     android:orientation="vertical"
     android:background="@color/backGroundColorGray">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="朝の支度"
+        android:textSize="24dp"
+        android:padding="16dp"
+        android:layout_gravity="left"
+        android:textColor="@color/textColorPrimary"
+        android:background="@color/backGroundColorTitle" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/routine_task"
         android:scrollbars="vertical"

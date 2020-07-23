@@ -10,4 +10,5 @@
     <!--edit_routine-->
     <color name="backGroundColorGray">#EEEEEE</color>
     <color name="backGroundColorTask">#ffffff</color>
+    <color name="backGroundColorTitle">#ffffff</color>
 </resources>
