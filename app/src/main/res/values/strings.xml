@@ -4,4 +4,7 @@
     <string name="edit_routine">Edit Routine</string>
     <!--edit_routine-->
     <string name="routine_task_minute">%d分</string>
+    <!--Setting_routine-->
+    <string name="routine_setting_name_title">作業の名前</string>
+    <string name="routine_setting_time_title">作業時間</string>
 </resources>

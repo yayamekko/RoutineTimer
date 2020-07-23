@@ -7,7 +7,7 @@
     <!--text_color-->
     <color name="textColorPrimary">#000000</color>
 
-    <!--edit_routine-->
+    <!--common-->
     <color name="backGroundColorGray">#EEEEEE</color>
     <color name="backGroundColorTask">#ffffff</color>
     <color name="backGroundColorTitle">#ffffff</color>
