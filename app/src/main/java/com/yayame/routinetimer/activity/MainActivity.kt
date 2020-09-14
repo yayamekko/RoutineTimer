@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // TODO ここを押したらルーチン編集画面に遷移する
         findViewById<Button>(R.id.edit_routine_button).setOnClickListener {
-            startActivity(Intent(this, EditRoutineActivity::class.java))
+            startActivity(Intent(this, AppActivity::class.java))
         }
     }
 }

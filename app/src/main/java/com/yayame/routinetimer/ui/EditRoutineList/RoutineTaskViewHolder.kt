@@ -1,4 +1,4 @@
-package com.yayame.routinetimer.activity
+package com.yayame.routinetimer.ui.EditRoutineList
 
 import android.view.View
 import android.widget.ImageView

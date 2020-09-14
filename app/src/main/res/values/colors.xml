@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
+    <!--toolbar_color-->
+    <color name="colorToolbar">#99CCFF</color>
+
     <!--text_color-->
     <color name="textColorPrimary">#000000</color>
 

@@ -1,4 +1,4 @@
-package com.yayame.routinetimer.activity
+package com.yayame.routinetimer.ui.EditRoutineList
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yayame.routinetimer.R
-import model.RoutineTaskItem
+import com.yayame.routinetimer.model.RoutineTaskItem
 
 class RoutineTaskAdapter(
     private val context: Context,
@@ -20,7 +20,9 @@ class RoutineTaskAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoutineTaskViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.routine_task, parent, false)
-        return RoutineTaskViewHolder(view)
+        return RoutineTaskViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: RoutineTaskViewHolder, position: Int) {

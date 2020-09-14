@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SettingRoutineActivity"></activity>
+        <activity
+            android:name=".activity.AppActivity"
+            android:label="@string/title_activity_app"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.SettingRoutineActivity" />
         <activity android:name=".activity.EditRoutineActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
