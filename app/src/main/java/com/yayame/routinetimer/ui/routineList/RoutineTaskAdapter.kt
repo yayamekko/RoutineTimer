@@ -1,4 +1,4 @@
-package com.yayame.routinetimer.ui.EditRoutineList
+package com.yayame.routinetimer.ui.routineList
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,8 +11,9 @@ import com.yayame.routinetimer.model.RoutineTaskItem
 class RoutineTaskAdapter(
     private val context: Context,
     private val routineTaskItems: List<RoutineTaskItem>
-) :
-    RecyclerView.Adapter<RoutineTaskViewHolder>() {
+) : RecyclerView.Adapter<RoutineTaskViewHolder>() {
+
+    private lateinit var listener: OnTaskClickListener
 
     override fun getItemCount(): Int {
         return routineTaskItems.size
@@ -27,7 +28,7 @@ class RoutineTaskAdapter(
 
     override fun onBindViewHolder(holder: RoutineTaskViewHolder, position: Int) {
         val routineTaskItem: RoutineTaskItem = routineTaskItems[position]
-        holder.task.text = routineTaskItem.task
+        holder.taskName.text = routineTaskItem.task
         holder.minute.text = context.getString(R.string.routine_task_minute, routineTaskItem.minute)
         routineTaskItem.minute.toString()
         if (position + 1 == routineTaskItems.size) {
@@ -35,5 +36,21 @@ class RoutineTaskAdapter(
         } else {
             holder.arrow.visibility = View.VISIBLE
         }
+
+        holder.task.setOnClickListener {
+            listener.onTaskClickListener()
+        }
+
     }
+
+    // リスナーのインターフェース
+    interface OnTaskClickListener {
+        fun onTaskClickListener()
+    }
+
+    // リスナー
+    fun setOnTaskClickListener(listener: OnTaskClickListener) {
+        this.listener = listener
+    }
+
 }

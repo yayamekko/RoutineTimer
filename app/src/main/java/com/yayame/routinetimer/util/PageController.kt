@@ -8,23 +8,23 @@ import com.yayame.routinetimer.R
 import com.yayame.routinetimer.activity.AppActivity
 
 class PageController(
-    private val fragmentTransaction: FragmentTransaction,
     @IdRes private val importArea: Int
 ) {
 
-    fun addFragment(fragment: Fragment) {
-        fragmentTransaction.add(importArea, fragment)
+    fun addFragment(fragmentTransaction: FragmentTransaction, fragment: Fragment) {
+        fragmentTransaction.replace(importArea, fragment)
         fragmentTransaction.commit();
     }
 
+
     companion object {
         @JvmStatic
-        fun create(activity: Activity, fragmentTransaction: FragmentTransaction): PageController {
+        fun create(activity: Activity): PageController {
             val importArea = when (activity::class.java.name) {
                 AppActivity::class.java.name -> R.id.import_fragment_area
                 else -> 0
             }
-            return PageController(fragmentTransaction, importArea)
+            return PageController(importArea)
         }
     }
 }

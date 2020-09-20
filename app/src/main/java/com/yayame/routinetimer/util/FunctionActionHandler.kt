@@ -1,25 +1,23 @@
 package com.yayame.routinetimer.util
 
 import android.app.Activity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.yayame.routinetimer.ui.routineList.RoutineListFragment
 
 class FunctionActionHandler(
     private val pageController: PageController
 ) {
 
-    // fragmentから呼び出す処理
-    fun showRoutineListFragment(fragment: RoutineListFragment) {
-        pageController.addFragment(fragment)
+    fun showFragment(transaction: FragmentTransaction, fragment: Fragment) {
+        pageController.addFragment(transaction, fragment)
     }
 
     companion object {
         @JvmStatic
         fun create(
-            activity: Activity,
-            fragmentTransaction: FragmentTransaction
+            activity: Activity
         ): FunctionActionHandler {
-            return FunctionActionHandler(PageController.create(activity, fragmentTransaction))
+            return FunctionActionHandler(PageController.create(activity))
         }
     }
 }

@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yayame.routinetimer.R
+import com.yayame.routinetimer.activity.AppActivity
 import com.yayame.routinetimer.model.RoutineTaskItem
-import com.yayame.routinetimer.ui.EditRoutineList.RoutineTaskAdapter
-import com.yayame.routinetimer.ui.EditRoutineList.RoutineTaskViewHolder
+import com.yayame.routinetimer.ui.editRoutine.EditRoutineFragment
 
 class RoutineListFragment(
     private val activity: Activity
@@ -41,10 +41,24 @@ class RoutineListFragment(
                 context,
                 routineTaskItems
             )
+
         routineTaskManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         routineTaskRecyclerView = view.findViewById(R.id.routine_task)
         routineTaskRecyclerView.layoutManager = routineTaskManager
         routineTaskRecyclerView.adapter = routineTaskAdapter
+
+        if (routineTaskAdapter is RoutineTaskAdapter) {
+            (routineTaskAdapter as RoutineTaskAdapter)
+                .setOnTaskClickListener(object : RoutineTaskAdapter.OnTaskClickListener {
+                    override fun onTaskClickListener() {
+                        if (activity is AppActivity) {
+                            activity.showFragment(
+                                EditRoutineFragment.create(activity)
+                            )
+                        }
+                    }
+                })
+        }
     }
 
     fun setRoutineTaskItems(routineTaskItems: MutableList<RoutineTaskItem>) {
