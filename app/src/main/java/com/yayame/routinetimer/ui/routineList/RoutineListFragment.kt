@@ -1,5 +1,6 @@
 package com.yayame.routinetimer.ui.routineList
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +14,10 @@ import com.yayame.routinetimer.model.RoutineTaskItem
 import com.yayame.routinetimer.ui.EditRoutineList.RoutineTaskAdapter
 import com.yayame.routinetimer.ui.EditRoutineList.RoutineTaskViewHolder
 
-class RoutineListFragment : Fragment() {
+class RoutineListFragment(
+    private val activity: Activity
+) : Fragment() {
+
     private lateinit var routineTaskRecyclerView: RecyclerView
     private lateinit var routineTaskAdapter: RecyclerView.Adapter<RoutineTaskViewHolder>
     private lateinit var routineTaskManager: RecyclerView.LayoutManager
@@ -53,5 +57,10 @@ class RoutineListFragment : Fragment() {
                 )
             routineTaskItems.add(routineTaskItem)
         }
+    }
+
+    companion object {
+        @JvmStatic
+        fun create(activity: Activity) = RoutineListFragment(activity)
     }
 }
