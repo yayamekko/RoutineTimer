@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.yayame.routinetimer.R
 import com.yayame.routinetimer.activity.AppActivity
 import com.yayame.routinetimer.model.RoutineTaskItem
@@ -59,6 +60,14 @@ class RoutineListFragment(
                     }
                 })
         }
+        view.findViewById<FloatingActionButton>(R.id.add_floating_button)
+            .setOnClickListener {
+                if (activity is AppActivity) {
+                    activity.showFragment(
+                        EditRoutineFragment.create(activity)
+                    )
+                }
+            }
     }
 
     fun setRoutineTaskItems(routineTaskItems: MutableList<RoutineTaskItem>) {

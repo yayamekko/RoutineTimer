@@ -2,6 +2,7 @@ package com.yayame.routinetimer.activity
 
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.yayame.routinetimer.R
 import com.yayame.routinetimer.ui.routineList.RoutineListFragment
@@ -28,7 +29,15 @@ class AppActivity(
     }
 
     fun showFragment(fragment: Fragment) {
-        functionActionHandler.showFragment(supportFragmentManager.beginTransaction(), fragment)
+        if (fragment is DialogFragment) {
+            functionActionHandler.showDialogFragment(
+                supportFragmentManager.beginTransaction(),
+                fragment
+            )
+        } else {
+            functionActionHandler.showFragment(supportFragmentManager.beginTransaction(), fragment)
+        }
+
     }
 
     companion object {
