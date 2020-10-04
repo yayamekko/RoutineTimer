@@ -14,6 +14,7 @@ class PageController(
 
     fun replaceFragment(fragmentTransaction: FragmentTransaction, fragment: Fragment) {
         fragmentTransaction.replace(importArea, fragment)
+        fragmentTransaction.addToBackStack(fragment.tag)
         fragmentTransaction.commit();
     }
 
