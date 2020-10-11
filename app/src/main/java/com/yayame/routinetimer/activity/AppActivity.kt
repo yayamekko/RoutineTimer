@@ -14,10 +14,12 @@ class AppActivity(
 ) : AppCompatActivity() {
 
     lateinit var functionActionHandler: FunctionActionHandler
+    lateinit var realmUtil: RealmUtil
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
+        realmUtil = RealmUtil().initRealm(this)
 
         // ツールバーを設定
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -31,7 +33,7 @@ class AppActivity(
 
     override fun onDestroy() {
         super.onDestroy()
-        RealmUtil().close()
+        realmUtil.close()
     }
 
     fun showFragment(fragment: Fragment) {

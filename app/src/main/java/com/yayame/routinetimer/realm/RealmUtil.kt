@@ -36,9 +36,8 @@ class RealmUtil {
         timeMillis: Long
     ) {
         realm.executeTransaction {
-            val routineTaskItem = realm.createObject(RoutineTaskItemRealmObject::class.java)
+            val routineTaskItem = realm.createObject(RoutineTaskItemRealmObject::class.java, taskId)
             routineTaskItem.also {
-                it.taskId = taskId
                 it.taskGroupId = taskGroupId
                 it.sequenceNumber = sequenceNumber
                 it.taskName = taskName
@@ -56,7 +55,7 @@ class RealmUtil {
         return sequenceNumber?.toInt()?.plus(1) ?: 0
     }
 
-    fun initRealm(context: Context) {
+    fun initRealm(context: Context): RealmUtil {
         Realm.init(context)
         val config = RealmConfiguration.Builder()
             .name("RoutineTimer.realm")
@@ -64,5 +63,6 @@ class RealmUtil {
             .build()
         Realm.setDefaultConfiguration(config)
         realm = Realm.getDefaultInstance()
+        return this
     }
 }

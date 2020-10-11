@@ -30,11 +30,6 @@ class EditRoutineFragment(
                     activity.showFragment(SelectTimeDialogFragment.newInstance())
                 }
             }
-
-//        RealmUtil().createRoutineTaskItem(
-//            "111",
-//            view.findViewById<TextView>()
-//        )
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -48,6 +43,13 @@ class EditRoutineFragment(
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.edit_routine_save) {
+            (activity as AppActivity).realmUtil.createRoutineTaskItem(
+                "111",
+                "手洗い",
+                12345
+            )
+        }
 
         return true
     }
