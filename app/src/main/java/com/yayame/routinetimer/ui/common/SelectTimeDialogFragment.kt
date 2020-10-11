@@ -20,7 +20,11 @@ class SelectTimeDialogFragment : DialogFragment() {
         secondsNumberPicker.minValue = 0
 
         val dialog = AlertDialog.Builder(context).apply {
-            setPositiveButton("OK", null)
+            setPositiveButton(
+                "OK"
+            ) { _, _ ->
+                //TODO 時間設定
+            }
             setNeutralButton("Cancel", null)
             setView(view)
         }

@@ -32,6 +32,11 @@ class EditRoutineFragment(
                     activity.showFragment(SelectTimeDialogFragment.newInstance())
                 }
             }
+
+//        RealmUtil().createRoutineTaskItem(
+//            "111",
+//            view.findViewById<TextView>()
+//        )
     }
 
     companion object {

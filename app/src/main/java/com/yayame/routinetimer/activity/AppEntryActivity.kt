@@ -9,7 +9,7 @@ class AppEntryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        RealmUtil.init(this)
+        RealmUtil().initRealm(this)
         startActivity(Intent(this, MainActivity::class.java))
     }
 }

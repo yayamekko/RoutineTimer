@@ -1,4 +1,4 @@
-package com.yayame.routinetimer.util
+package com.yayame.routinetimer.common
 
 import android.app.Activity
 import androidx.fragment.app.DialogFragment
@@ -12,7 +12,7 @@ class FunctionActionHandler(
     fun showFragment(transaction: FragmentTransaction, fragment: Fragment) {
         pageController.replaceFragment(transaction, fragment)
     }
-    
+
     fun showDialogFragment(transaction: FragmentTransaction, fragment: DialogFragment) {
         pageController.showDialogFragment(transaction, fragment)
     }

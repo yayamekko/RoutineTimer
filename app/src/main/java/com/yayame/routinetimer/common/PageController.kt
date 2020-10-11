@@ -1,4 +1,4 @@
-package com.yayame.routinetimer.util
+package com.yayame.routinetimer.common
 
 import android.app.Activity
 import androidx.annotation.IdRes

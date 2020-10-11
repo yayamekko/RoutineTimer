@@ -5,16 +5,16 @@ import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
 
-open class RoutineTaskItemRealmObject : RealmObject() {
+open class RoutineTaskItemRealmObject(
     @PrimaryKey
-    private var taskId: Int = -1
+    open var taskId: String = "",
 
-    private var taskGroupId: Int = -1
+    open var taskGroupId: String = "",
 
-    private var sequenceNumber: Int = -1
+    open var sequenceNumber: Int = -1,
 
     @Required
-    private var taskName: String = ""
+    open var taskName: String = "",
 
-    private var timeMillis: Long = -1
-}
+    open var timeMillis: Long = -1
+) : RealmObject()

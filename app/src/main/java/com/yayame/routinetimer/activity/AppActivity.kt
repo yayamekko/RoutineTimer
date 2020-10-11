@@ -1,15 +1,17 @@
 package com.yayame.routinetimer.activity
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.yayame.routinetimer.R
+import com.yayame.routinetimer.common.FunctionActionHandler
+import com.yayame.routinetimer.realm.RealmUtil
 import com.yayame.routinetimer.ui.routineList.RoutineListFragment
-import com.yayame.routinetimer.util.FunctionActionHandler
 
 class AppActivity(
-) : BaseActivity() {
+) : AppCompatActivity() {
 
     lateinit var functionActionHandler: FunctionActionHandler
 
@@ -28,6 +30,11 @@ class AppActivity(
         showFragment(RoutineListFragment.create(this))
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        RealmUtil().close()
+    }
+
     fun showFragment(fragment: Fragment) {
         if (fragment is DialogFragment) {
             functionActionHandler.showDialogFragment(
@@ -38,6 +45,14 @@ class AppActivity(
             functionActionHandler.showFragment(supportFragmentManager.beginTransaction(), fragment)
         }
 
+    }
+
+    fun setToolbar(title: String) {
+
+    }
+
+    interface ToolbarSettingNavigator {
+        fun setToolbar(title: String)
     }
 
     companion object {
