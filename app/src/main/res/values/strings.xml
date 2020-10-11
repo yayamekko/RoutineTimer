@@ -3,6 +3,8 @@
     <string name="app_name">Routine Timer</string>
     <string name="edit_routine">Edit Routine</string>
     <!--edit_routine-->
+    <string name="edit_routine_title">作業と保存時間</string>
+    <string name="edit_routine_toolbar_save">保存</string>
     <string name="routine_task_minute">%d分</string>
     <!--Setting_routine-->
     <string name="routine_setting_name_title">作業の名前</string>

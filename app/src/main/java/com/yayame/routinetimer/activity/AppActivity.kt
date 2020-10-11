@@ -21,7 +21,6 @@ class AppActivity(
 
         // ツールバーを設定
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.title = "Routine Timer"
         setSupportActionBar(toolbar)
 
         // フラグメントを設定
@@ -45,14 +44,6 @@ class AppActivity(
             functionActionHandler.showFragment(supportFragmentManager.beginTransaction(), fragment)
         }
 
-    }
-
-    fun setToolbar(title: String) {
-
-    }
-
-    interface ToolbarSettingNavigator {
-        fun setToolbar(title: String)
     }
 
     companion object {

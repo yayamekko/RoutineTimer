@@ -2,9 +2,7 @@ package com.yayame.routinetimer.ui.editRoutine
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.yayame.routinetimer.R
@@ -37,6 +35,21 @@ class EditRoutineFragment(
 //            "111",
 //            view.findViewById<TextView>()
 //        )
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity.title = getString(R.string.edit_routine_title)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.edit_routine_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return true
     }
 
     companion object {
