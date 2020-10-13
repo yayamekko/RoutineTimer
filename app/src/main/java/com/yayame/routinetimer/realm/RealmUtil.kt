@@ -1,6 +1,9 @@
 package com.yayame.routinetimer.realm
 
 import android.content.Context
+import android.util.Log
+import com.facebook.stetho.Stetho
+import com.uphyca.stetho_realm.RealmInspectorModulesProvider
 import com.yayame.routinetimer.realmobject.RoutineTaskItemRealmObject
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -63,6 +66,13 @@ class RealmUtil {
             .build()
         Realm.setDefaultConfiguration(config)
         realm = Realm.getDefaultInstance()
+        Log.d("realm name :", realm.configuration.realmFileName)
+        Stetho.initialize(
+            Stetho.newInitializerBuilder(context)
+                .enableDumpapp(Stetho.defaultDumperPluginsProvider(context))
+                .enableWebKitInspector(RealmInspectorModulesProvider.builder(context).build())
+                .build()
+        )
         return this
     }
 }
